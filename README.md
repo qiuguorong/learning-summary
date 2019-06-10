@@ -9,6 +9,7 @@
 8. 单元测试及性能测试
 9. SSR(nuxt.js)、骨架屏、PWA
 10. React
+11. React Native
 
 ## 具体细节
 * vue是如何实现双向绑定的

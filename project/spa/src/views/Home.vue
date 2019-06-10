@@ -47,6 +47,7 @@ export default {
   mounted () {
     console.log(base64.Base64.encode('oss/default-dir/eY2SHb7PmE.png'))
     console.log(concat)
+    console.log(performance.getEntries())
   },
   components: {
     HelloWorld,
