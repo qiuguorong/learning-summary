@@ -5,6 +5,10 @@ module.exports = {
     "postcss-import": {},
     "postcss-url": {},
     // to edit target browsers: use "browserslist" field in package.json
-    "autoprefixer": {}
+    "autoprefixer": {},
+    "postcss-px-scale": {
+      scale: 5,
+      excludes: 'bxs-ui-vue'
+    }
   }
 }

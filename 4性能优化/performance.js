@@ -25,3 +25,24 @@ const domParseTiming = timingPerf.domComplete - timingPerf.domLoading
 const fpTiming = timingPerf.domLoading - timingPerf.fetchStart
 
 const entries = Performance.getEntries()
+
+// IntersectionObserver polyfill
+// https://github.com/w3c/IntersectionObserver/tree/master/polyfill
+// 实现了IntersectionObserver、IntersectionObserverEntry
+
+// requestIdleCallback polyfill
+// 为什么是50
+// 其实浏览器的主线程在每一帧处理完用户输入、动画计算、合成帧等操作后，通常会处于空闲状态，直到下一帧开始、或者收到新的用户输入、或者pending的任务满足了执行条件等。
+const requestIdleCallback =
+  requestIdleCallback ||
+  function(cb) {
+    const start = Date.now();
+    return setTimeout(function() {
+      cb({
+        didTimeout: false,
+        timeRemaining: function() {
+          return Math.max(0, 50 - (Date.now() - start));
+        },
+      });
+    }, 1);
+  };

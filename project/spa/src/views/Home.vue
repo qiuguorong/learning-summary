@@ -1,7 +1,7 @@
 <template>
   <div class="home" @click="homeEvent">
     <div @click.capture="parentEvent">
-      <div @click="childrenEvent1">childrenEvent1</div>
+      <div class="test" @click="childrenEvent1">childrenEvent1</div>
       <div @click="childrenEvent2">childrenEvent2</div>
     </div>
     <img alt="Vue logo" src="../assets/logo.png" @click="toggleSheets">
@@ -48,6 +48,17 @@ export default {
     console.log(base64.Base64.encode('oss/default-dir/eY2SHb7PmE.png'))
     console.log(concat)
     console.log(performance.getEntries())
+    document.querySelector('.test').innerText = '123'
+    setTimeout(() => {
+      alert('setTimeout')
+    }, 100)
+    new Promise(resolve => {
+      for (var i = 0; i <= 1000000000; i++) {
+        i === 1000000000 && resolve()
+      }
+    }).then(() => {
+      alert('promise.then')
+    })
   },
   components: {
     HelloWorld,
