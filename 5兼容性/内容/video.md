@@ -1,4 +1,4 @@
-# Video相关
+# 视频调研及总结
 
 ## 基础知识
 - 帧率：图形处理器每秒钟能够刷新几次，单位 FPS（每秒多少帧），60fps 表示 1 秒 60 帧
@@ -23,7 +23,14 @@ web 最佳实践如下：
 </video>
 ```
 为什么会出现浏览器并不全支持相同的codecs呢？<br />
-因为不同的codecs有各自的专利，而浏览器想要支持这些格式，就得支付高额的费用...
+因为不同的codecs有各自的专利，而浏览器想要支持这些格式，就得支付高额的费用...<br />
+以下视频皆为MP4（MPEG-4）格式
+* 情况1：src配置找不到路径的文件（包括空），error code: 4
+* 情况2：src配置视频编码：AVC（H.264），音频编码：AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/h264aac_2f999e5322e6d34.mp4) 正常播放
+* 情况3：src配置视频编码：非AVC(H.264)，音频编码：非AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/error_0beee8e8a274d4b.mp4)，error code:4
+* 情况4：src配置视频编码：非AVC(H.264)，音频编码：AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/mpeg4divxaac_96aceaba7ad3bf4.mp4)，有声音无画面，未报错
+* 情况5：src配置视频编码：AVC(H.264)，音频编码：非AAC 视频地址，无声音有画面，未报错（没找到视频源，未验证）
+* 情况6：src配置视频编码：AVC(H.265)，音频编码：AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/h265aac_5c03d9ccfbaa048.mp4)，有声音无画面，未报错
 
 ## 自定义video controls
 #### 隐藏自带控件
@@ -125,13 +132,6 @@ video.removeAttribute('src')
 video.load()
 ```
 #### 错误处理
-以下视频皆因为MP4（MPEG-4）格式
-* 情况1：src配置找不到路径的文件（包括空），code:4
-* 情况2：src配置视频编码：AVC（H.264），音频编码：AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/h264aac_2f999e5322e6d34.mp4) 正常播放
-* 情况3：src配置视频编码：非AVC(H.264)，音频编码：非AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/error_0beee8e8a274d4b.mp4)，code:4
-* 情况4：src配置视频编码：非AVC(H.264)，音频编码：AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/mpeg4divxaac_96aceaba7ad3bf4.mp4)，有声音无画面，未报错
-* 情况5：src配置视频编码：AVC(H.264)，音频编码：非AAC 视频地址，无声音有画面，未报错（没找到视频源，未验证）
-* 情况6：src配置视频编码：AVC(H.265)，音频编码：AAC [视频地址](http://res.winbaoxian.com/autoUpload/common/h265aac_5c03d9ccfbaa048.mp4)，有声音无画面，未报错
 ```js
 video.addEventListener('error', function(e) {
   // code 枚举如下
@@ -162,7 +162,7 @@ video.addEventListener('error', function(e) {
 
 ## 常用事件兼容性
 以下测试数据来源机型及环境
-* PC Chrome 当前最新版
+* PC Chrome v75.0.3770.100
 * IOS iPhone 6P v11.4.1
 * Android vivo X9Plus v7.1.2
 * 微信 v7.0.4
