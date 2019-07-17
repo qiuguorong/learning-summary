@@ -23,6 +23,7 @@ npm publish
 ```
 
 ### .npmrc
+engine-strict=true
 registry=https://registry.npm.taobao.org/
 
 ### npm audit
