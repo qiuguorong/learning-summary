@@ -20,4 +20,5 @@ yarn-error.log*
 *.sw*
 
 /project
+/project-bak
 /primary
