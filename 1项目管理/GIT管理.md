@@ -40,3 +40,13 @@ git branch -m master
 // 提交新的master分支代码
 git push -f origin master
 ```
+
+### 删除分支
+```shell
+// 删除本地分支
+git branch -d <BranchName>
+// 强制删除
+git branch -D <BranchName>
+// 删除远程分支
+git push origin --delete 分支名（remotes/origin/分支名）
+```

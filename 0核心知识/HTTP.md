@@ -14,8 +14,9 @@ HTTP/1.1，HTTP构建在TCP之上，属于应用层协议
 Options、Get、Head、Post、Put、Delete、Trace、Connect...
 
 ### Get请求
+GET的最大长度限制是因为 浏览器和web服务器限制了URI的长度，一个英文占用2个字节，一个中文字占用3-4个字节不等
 * 用与获取数据
-* 有长度限制，最好不超过 2083字节（2K + 35）
+* 有长度限制，最好不超过 2083字节（2K + 35），IE 2083byte，safari，Chrome 8182byte
 * 请求可以被缓存
 * 请求报文没有报文体
 

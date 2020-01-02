@@ -82,3 +82,23 @@ const timerFunc = () => {
 ```
 
 ### slot插槽
+#### 作用域插槽
+子组件
+```html
+<slot v-bind:user="user"></slot>
+```
+父组件
+```html
+<!-- 良好的书写习惯，加上default -->
+<custom-components v-slot:default="slotProps">{{slotProps.user}}</custom-components>
+<!-- 解构插槽 -->
+<custom-components v-slot:default="{ user }">{{user}}</custom-components>
+```
+
+### vuex
+
+### vue-router
+
+### vue webpack plugin
+
+### vue webpack loader

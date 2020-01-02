@@ -8,3 +8,4 @@
 * IOS 设置 -> 通用 -> 关于手机 -> 证书信任设置 勾选`Charles Proxy CA`证书
 * Android ？
 5. 在Charles软件Proxy -> SSL Proxying Setting -> SSL Proxying下添加`*:443`
+ 

@@ -1,5 +1,5 @@
 ## 从输入URL到页面呈现
-* URL解析，检查URL合法性
+* URL解析，检查URL合法性，解析到http协议，则发起一个网络请求
 * 根据地址向DNS服务器查询IP
   浏览器DNS缓存 -> 系统缓存 -> 读取hosts文件 -> 路由器缓存 -> ISP缓存 ->向域名服务器发送请求
 * 通过IP向Web服务器发起TCP连接
@@ -10,7 +10,7 @@
   client 向 server 回复得到确认 ACK = 1
   作用：为了建立可靠稳定的传输通道
 
-  四次挥手
+  四次挥手，断开连接
   ![](https://user-images.githubusercontent.com/18378034/33181749-01b3c2f6-d037-11e7-98eb-315678cd9625.png)
 
   为什么要四次挥手？因为TCP是全双工的，client可以主动向server发送数据，反之也可

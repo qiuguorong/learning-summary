@@ -28,3 +28,12 @@
 * 静态文件的浏览器缓存如何实现
 * 前端跨域方案
 * 移动端优化方式？离线包是如何实现的？
+
+## 其它
+* Vue 3.0
+* GraphQL
+* PWA
+* WebAssembly（wasm）
+* Flutter
+* Taro（React 小程序）
+* TypeScript

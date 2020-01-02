@@ -122,6 +122,15 @@ const handleFullscreen = function () {
 fsBtn.addEventListener('click', function(e) {
    handleFullscreen()
 })
+video.addEventListener('fullscreenchange', e => {
+  if (isFullScreen()) {
+    // 进入全屏
+  } else {
+    // 退出全屏
+  }
+})
+video.addEventListener('webkitfullscreenchange', e => {
+})
 ```
 #### 终止视频下载
 ```js
@@ -156,6 +165,14 @@ video.addEventListener('error', function(e) {
   x5-video-player-type="h5"
   x5-video-player-fullscreen="true">
 </video>
+```
+```js
+video.addEventListener('x5videoenterfullscreen', e => {
+  console.log('进去全屏回调事件')
+})
+video.addEventListener('x5videoexitfullscreen', e => {
+  console.log('退出全屏回调事件')
+})
 ```
 看 [X5同层播放器试用报告](https://x5.tencent.com/tbs/guide/web/x5-video.html) <br />
 在同层播放器模式下，视频始终会自动全屏

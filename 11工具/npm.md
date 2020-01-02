@@ -27,3 +27,8 @@ engine-strict=true
 registry=https://registry.npm.taobao.org/
 
 ### npm audit
+
+### [npx](http://www.ruanyifeng.com/blog/2019/02/npx.html)
+npx 的原理很简单，就是运行的时候，会到node_modules/.bin路径和环境变量$PATH里面，检查命令是否存在。
+* 调用项目内模块
+* 避免全局安装模块
