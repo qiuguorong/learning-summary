@@ -5,6 +5,8 @@
 // 添加仓库地址
 git remote add origin git@github.com:git_username/repository_name.git
 git push -u origin master
+git remote set-url origin URL
+git submodule add https://github.com/Kujiale-Mobile/PainterCore.git src/components/painter  
 ```
 
 ### Reset Checkout Revert区别
@@ -49,4 +51,17 @@ git branch -d <BranchName>
 git branch -D <BranchName>
 // 删除远程分支
 git push origin --delete 分支名（remotes/origin/分支名）
+```
+
+### 查看文件大小
+```shell
+du -sh * 
+```
+
+### 打标签
+https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
+```shell
+git tag -a 1.3.0 -m 'tag message'
+git push origin --tags
+git push origin --delete <tagname>
 ```
