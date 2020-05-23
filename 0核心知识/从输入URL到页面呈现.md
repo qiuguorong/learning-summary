@@ -30,5 +30,17 @@
   reflow
 * 关闭连接
 
+## 浏览器从下载HTML到页面展示
+* 下载HTML文档
+* 解析HTML节点，启动下载线程？进程？处理异步资源（css,js,font,image...）
+* 构建DOM树，遇到CSS构建CSSOM树（不会阻塞DOM树构建，但是会阻塞渲染树构建），遇到JS下载并执行js（阻塞DOM树构建，阻塞渲染树构建）
+* 构建渲染树
+* paint
+关键词：下载 解析 执行 构建DOM树，CSSOM树，Render树
+
+## resource hints
+* preload 作用于本页面，提升资源下载优先级
+* prefetch 空闲时下载，优先级低，用于未来需要访问的页面
+
 ### 参考
 * [TCP三次握手](https://github.com/sunyongjian/blog/issues/34)
